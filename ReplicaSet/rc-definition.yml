@@ -1,0 +1,21 @@
+## Replica Set tutorial
+
+apiVersion: v1
+kind: ReplicationController
+metadata:     # replication controller
+  name: myapp-rc
+  labels:
+    app: myapp
+    type: front-end
+
+spec:
+  replicas: 3
+  template: # we provide a temlate which will be used to create replicas
+    metadata:     # pod 
+      labels:
+        app: myapp
+        type: front-end
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx

@@ -1,0 +1,30 @@
+apiVersion: v1      #{api_version} for POD:v1 , Service:v1, ReplicaSet:apps/v1 , Deployment:apps/v1
+kind: Pod           #type of object we are trying to create eg, Service, ReplicaSet, Deployment 
+metadata:           # in dictionary format under metadata only name and label comes
+  name: myapp-pod            #{pod_name} string value
+  labels:                     #{pod_labels} dictionary value, under labels we can have any key value pair
+    app: myapp               #{pod_name}
+    type: front-end
+
+
+
+spec:               # this is also a dictionary ,provide additional information to kuberentes about the object we are creating
+  containers:       # list or array
+    - name: nginx-conatiner   #{container_name} can give any name to the container
+      image: nginx    # image name according to docker hub
+
+### kubectl create -f pod-definition.yml
+### kubeclt get pods
+### kubeclt describe pod myapp-pod
+
+
+
+# Imperative Management
+# kubectl create is what we call Imperative Management. 
+# On this approach you tell the Kubernetes API what you want to create, replace or delete, 
+# not how you want your K8s cluster world to look like.
+
+# Declarative Management
+# kubectl apply is part of the Declarative Management approach, 
+# where changes that you may have applied to a live object (i.e. through scale) are "maintained" 
+# even if you apply other changes to the object.

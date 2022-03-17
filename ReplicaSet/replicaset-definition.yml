@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myapp-replicaset
+  labels:
+    app: myapp
+    type: front-end
+
+spec:
+
+  replicas: 3
+
+  selector:     # what pods fall under it. because it can also handle pods that were not created as part of replica set creation.
+    matchLabels:
+      app: myapp
+      type: front-end
+
+  template:
+    metadata:
+      name: myapp-pod
+      labels:
+        app: myapp
+        type: front-end
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx
+
+
+## kubectl create -f replicaset-definition.yml
+
+## What is we want to scale up the replica set?
+# 1. First way:- first we change the replica count to 4, then 
+#  kubectl replace -f replicaset-definition.yml
+# 2. Second way:- 
+#  kubectl scale --replicas=4 -f replicaset-definition.yml
+ 
+
+
+# To edit a ReplicaSet, you can use the kubectl edit command.
+# kubectl edit rs/myapp-replicaset
