@@ -39,3 +39,7 @@ spec:
 
 # To edit a ReplicaSet, you can use the kubectl edit command.
 # kubectl edit rs/myapp-replicaset
+
+
+# To get all the objects created at the same place use:
+# kubectl get all

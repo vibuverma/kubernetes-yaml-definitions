@@ -18,6 +18,10 @@ spec:               # this is also a dictionary ,provide additional information 
 ### kubeclt describe pod myapp-pod
 
 
+# To get all the objects created at the same place use:
+# kubectl get all
+
+
 
 # Imperative Management
 # kubectl create is what we call Imperative Management. 
