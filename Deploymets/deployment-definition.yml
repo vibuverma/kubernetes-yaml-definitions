@@ -24,6 +24,10 @@ spec:
 
 ### kubectl create -f deployment-definition.yml
 
+### kubectl edit deployment deployment-definition.yml
+
+### kubectl set image deployment deployment-definition.yml nginx=nginx:alpine
+
 
 # To get all the objects created at the same place use:
 # kubectl get all
