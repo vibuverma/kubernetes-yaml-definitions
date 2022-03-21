@@ -1,0 +1,21 @@
+# to check rollout status.
+## kubectl rollout status deployment/myapp-deployment
+
+# to check rollout history.
+## kubectl rollout history deployment/myapp-deployment
+
+
+#### Deployment strategy.
+# 1. Recreate Strategy:
+#  Destroy all the pods and then recreate the new ones.
+# the problem with this is downtime.
+
+# 2. Rolling Update (Default)
+# we replace the old pod and bring up the new pod one by one.
+
+
+
+
+
+## Rollback
+# kubectl rollout undo deployment/myapp-deployment
