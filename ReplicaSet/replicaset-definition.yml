@@ -43,3 +43,7 @@ spec:
 
 # To get all the objects created at the same place use:
 # kubectl get all
+
+
+# How to give label in selector:matchLabel ?
+# for this copy the lable mentioned in the template section and paste it in the selector section.
