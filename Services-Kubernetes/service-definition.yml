@@ -4,11 +4,15 @@ metadata:
   name: myapp-service
 
 spec:
-  type: NodePort # can be clusterIP, LoadBalancer, NodePort, or ExternalName
+  type: ClusterIp
   ports:
-    - port: 80 # the port on the service. 
-      targetPort: 80  #the port of the pod
-      nodePort: 30008 # the port which gets exposed or gets accessed  by the user.
+    - port: 80
+      targetPort: 80
+  # type: NodePort # can be clusterIP, LoadBalancer, NodePort, or ExternalName
+  # ports:
+  #   - port: 80 # the port on the service. 
+  #     targetPort: 80  #the port of the pod
+  #     nodePort: 30008 # the port which gets exposed or gets accessed  by the user. any value between 30000 and 32767
   selector:
     app: myapp
     tier: front-end
@@ -17,3 +21,4 @@ spec:
 
   ## kubectl create -f service-definition.yml
   ## kubectl get services
+  ## curl http://192.168.1.2:30008
