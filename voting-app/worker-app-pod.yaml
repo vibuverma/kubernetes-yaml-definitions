@@ -10,4 +10,3 @@ spec:
   containers:
     - name: worker-app
       image: kodekloud/examplevotingapp_worker:v1
-        
